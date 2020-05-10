@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary main-nav">
-  <a class="navbar-brand" href="#">Contact App</a>
+<nav class="navbar navbar-expand-lg navbar-light double-boarder" style="background-color: rgb(201, 255, 255)">
+  <a class="navbar-brand" href="#">PassKit</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -8,56 +8,32 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Contacts <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item active">
         <a class="nav-link" href="#">Hello {{currentUser.username}}</a>
       </li>
+
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="contactParams" name="search">
-      <div class="btn-group">
-        <button class="btn btn-outline-light my-2 my-sm-0" type="submit" (click)="searchContact(contactParams)">Search</button>
-        <button class="btn btn-outline-light my-2 my-sm-0" type="submit" (click)="logout()">Logout</button>
+    <form>
+      <div>
+        <button class="btn btn-outline-dark" type="submit" (click)="logout()">Logout</button>
       </div>
     </form>
   </div>
 </nav>
 
-<ul class="nav justify-content-end nav-action-container">
-  <li class="nav-item">
-    <button type="button" class="btn btn-primary contact-button" (click)="loadContacts()">Load
-      Contact</button>
-
-  </li>
-  <li class="nav-item">
-    <button type="button" class="btn btn-primary contact-button" (click)="saveItemsToLocalStorage(contacts)">Save
-      All</button>
-
-  </li>
-  <li class="nav-item">
-    <button type="button" class="btn btn-primary contact-button" (click)="addContact()">Add Contact</button>
-
-  </li>
-</ul>
-
 <div class="contact-grid">
   <table class="table">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">First Name</th>
-        <th scope="col">Last Name</th>
+    <thead>
+      <tr class=" double-boarder" style="background-color:rgb(201, 255, 255)">
+        <th scope="col">Website</th>
+        <th scope="col">URL</th>
+        <th scope="col">Username</th>
         <th scope="col">Email</th>
-        <th scope="col">Phone</th>
+        <th scope="col">Password</th>
         <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let contact of contacts; let i = index">
+      <tr class="table-secondary" *ngFor="let contact of contacts; let i = index">
         <th *ngIf="!contact.editing" scope="row">{{contact.id}}</th>
         <td *ngIf="!contact.editing">{{contact.firstName}}</td>
         <td *ngIf="!contact.editing">{{contact.lastName}}</td>
@@ -70,19 +46,19 @@
 
 
         <th *ngIf="contact.editing" scope="row">
-          <input [(ngModel)]="contact.id" type="text" class="form-control" placeholder="ID" aria-label="ID"
+          <input [(ngModel)]="contact.id" type="text" class="form-control" placeholder="Website" aria-label="ID"
             aria-describedby="basic-addon1">
         </th>
         <td *ngIf="contact.editing">
-          <input [(ngModel)]="contact.firstName" type="text" class="form-control" placeholder="First Name"
+          <input [(ngModel)]="contact.firstName" type="text" class="form-control" placeholder="URL"
             aria-label="FirstName" aria-describedby="basic-addon1">
         </td>
         <td *ngIf="contact.editing">
-          <input [(ngModel)]="contact.lastName" type="text" class="form-control" placeholder="Last Name"
+          <input [(ngModel)]="contact.lastName" type="text" class="form-control" placeholder="Username"
             aria-label="LastName" aria-describedby="basic-addon1">
         </td>
         <td *ngIf="contact.editing">
-          <input [(ngModel)]="contact.email" type="text" class="form-control" placeholder="Email" aria-label="Email"
+          <input [(ngModel)]="contact.email" type="text" class="form-control" placeholder="Password" aria-label="Email"
             aria-describedby="basic-addon1">
         </td>
         <td *ngIf="contact.editing">
@@ -90,7 +66,7 @@
             aria-describedby="basic-addon1">
         </td>
         <td *ngIf="contact.editing">
-          <div class="btn-group">
+          <div>
             <button type="button" class="btn btn-success contact-button" (click)="saveContact(contact)">Save</button>
             <button type="button" class="btn btn-danger contact-button" (click)="deleteContact(i)">X</button>
           </div>
@@ -99,4 +75,25 @@
       </tr>
     </tbody>
   </table>
+
+  <nav class="navbar navbar-light button-container">
+    <div></div>
+    <ul class="nav justify-content-center double-boarder" style="background-color: rgb(201, 255, 255)">
+      <li class="nav-item">
+        <button type="button" class="btn btn-outline-dark contact-button" (click)="loadContacts()">Load
+          Contact</button>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="btn btn-outline-dark contact-button"
+          (click)="saveItemsToLocalStorage(contacts)">Save
+          All</button>
+
+      </li>
+      <li class="nav-item">
+        <button type="button" class="btn btn-outline-dark contact-button" (click)="addContact()">Add Contact</button>
+
+      </li>
+    </ul>
+  </nav>
+  <div></div>
 </div>

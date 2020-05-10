@@ -79,7 +79,7 @@ export class ContactComponent implements OnInit {
     Object.keys(contact).forEach((key: any) => {
       if (contact[key] == null) {
         hasError = true;
-        this.toastService.showToast('danger', 2000, `Saved Failed! property ${key} must not be null!`);
+        this.toastService.showToast('danger', 5000, `Password not saved! Fill all fields.`);
       }
     });
     if (!hasError) {

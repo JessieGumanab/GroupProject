@@ -2,7 +2,7 @@
 
 <div class="login-grid">
     <div></div>
-    <form class="login-form box-shadow">
+    <form class="login-form box-shadow box-boarder">
         <div class="form-group">
             <label for="exampleInputEmail1">Username</label>
             <input name="username" [(ngModel)]="user.username" type="text" class="form-control" id="exampleInputEmail1"
@@ -17,7 +17,8 @@
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1">Remember Me?</label>
         </div>
-        <button type="submit" class="btn btn-primary" (click)="login(user)">Login</button>
+        <button type="submit" class="btn btn-outline-dark" (click)="login(user)">Login</button>
     </form>
+    
     <div></div>
 </div>

@@ -10,7 +10,19 @@ html, body {
 }
 .box-shadow {
     display: block;
-    -webkit-box-shadow: 7px 8px 35px -10px rgba(0,0,0,0.75);
--moz-box-shadow: 7px 8px 35px -10px rgba(0,0,0,0.75);
-box-shadow: 7px 8px 35px -10px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 64px 83px 62px 16px rgba(0,0,0,0.73);
+ -moz-box-shadow: 64px 83px 62px 16px rgba(0,0,0,0.73);
+ box-shadow: 64px 83px 62px 16px rgba(0,0,0,0.73);
+}
+.box-boarder {
+    border-radius: 91px 73px 73px 73px;
+    -moz-border-radius: 91px 73px 73px 73px;
+    -webkit-border-radius: 91px 73px 73px 73px;
+    border: 15px solid #000000;
+}
+.double-boarder {
+    border-radius: 73px 73px 73px 73px;
+ -moz-border-radius: 73px 73px 73px 73px;
+ -webkit-border-radius: 73px 73px 73px 73px;
+ border: 15px double #000000;
 }

@@ -1,26 +1,55 @@
 [
     {
-        "id": 1,
-        "firstName": "Jessie",
-        "lastName": "Gumanab",
-        "email": "MeJessie@gmail.com",
-        "phone": "(559) 555-2154",
+        "id": "Facebook",
+        "firstName": "www.facebook.com/jgumanab",
+        "lastName": "JGumanab@yahoomail.com",
+        "email": "JGumanab@yahoomail.com",
+        "phone": "NksLKs125!",
         "editing": false
     },
     {
-        "id": 2,
-        "firstName": "Sylvanas",
-        "lastName": "Windrunner",
-        "email": "LadyWindrunner@TheJailer.com",
-        "phone": "(559) 555-2154",
+        "id": "Twitter",
+        "firstName": "www.twitter.com/JGumDropUnicorn",
+        "lastName": "JGumDropUnicorn",
+        "email": "JGumanab@yahoomail.com",
+        "phone": "Pksien983$",
         "editing": false
     },
     {
-        "id": 3,
-        "firstName": "Queen",
-        "lastName": "Azshara",
-        "email": "QueenyAzshar@Nagawin.com",
-        "phone": "(559) 555-2154",
+        "id": "StateFarm",
+        "firstName": "www.StateFarm.com",
+        "lastName": "JGumanab",
+        "email": "JGumanab@icloud.com",
+        "phone": "Lkene839!",
+        "editing": false
+    },
+    {
+        "id": "Chase Bank",
+        "firstName": "www.Chase.com",
+        "lastName": "JessieGumanab",
+        "email": "JGumanab@icloud.com",
+        "phone": "LsesjJ820#",
+        "editing": false
+    },{
+        "id": "PG&E",
+        "firstName": "www.pge.com",
+        "lastName": "JesGumanab",
+        "email": "JGumanab@icloud.com",
+        "phone": "Knemms215@",
+        "editing": false
+    },{
+        "id": "BattleNet",
+        "firstName": "www.blizzard.com",
+        "lastName": "UnicornJ",
+        "email": "JGumanab@yahoomail.com",
+        "phone": "Pwyysi697!",
+        "editing": false
+    },{
+        "id": "FresnoState",
+        "firstName": "my.fresnostate.edu",
+        "lastName": "JessieGumanab",
+        "email": "JGumanab@mail.fresnostate.edu",
+        "phone": "Usnkes247#",
         "editing": false
     }
 ]
