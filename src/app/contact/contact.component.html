@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-light double-boarder" style="background-color: rgb(201, 255, 255)">
-  <a class="navbar-brand" href="#">PassKit</a>
+<nav class="navbar navbar-expand-lg navbar-light">
+  <a class="navbar-brand" href="#"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -8,7 +8,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Hello {{currentUser.username}}</a>
+        <a class="nav-link" href="#">Welcome to your PassKit account {{currentUser.username}}</a>
       </li>
 
     </ul>
@@ -22,8 +22,8 @@
 
 <div class="contact-grid">
   <table class="table">
-    <thead>
-      <tr class=" double-boarder" style="background-color:rgb(201, 255, 255)">
+    <thead class="thead-dark">
+      <tr>
         <th scope="col">Website</th>
         <th scope="col">URL</th>
         <th scope="col">Username</th>
@@ -33,14 +33,23 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="table-secondary" *ngFor="let contact of contacts; let i = index">
+      <tr *ngFor="let contact of contacts; let i = index">
         <th *ngIf="!contact.editing" scope="row">{{contact.id}}</th>
         <td *ngIf="!contact.editing">{{contact.firstName}}</td>
         <td *ngIf="!contact.editing">{{contact.lastName}}</td>
         <td *ngIf="!contact.editing">{{contact.email}}</td>
         <td *ngIf="!contact.editing">{{contact.phone}}</td>
         <td *ngIf="!contact.editing">
-          <button type="button" class="btn btn-danger contact-button" (click)="deleteContact(i)">X</button>
+          <button type="button" class="btn btn-outline-danger contact-button" (click)="deleteContact(i)"><svg
+              class="bi bi-x-circle" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M8 15A7 7 0 108 1a7 7 0 000 14zm0 1A8 8 0 108 0a8 8 0 000 16z"
+                clip-rule="evenodd" />
+              <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z"
+                clip-rule="evenodd" />
+              <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z"
+                clip-rule="evenodd" />
+            </svg></button>
         </td>
 
 
@@ -67,8 +76,26 @@
         </td>
         <td *ngIf="contact.editing">
           <div>
-            <button type="button" class="btn btn-success contact-button" (click)="saveContact(contact)">Save</button>
-            <button type="button" class="btn btn-danger contact-button" (click)="deleteContact(i)">X</button>
+            <button type="button" class="btn btn-outline-success contact-button" (click)="saveContact(contact)"><svg
+                class="bi bi-check-circle" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M15.354 2.646a.5.5 0 010 .708l-7 7a.5.5 0 01-.708 0l-3-3a.5.5 0 11.708-.708L8 9.293l6.646-6.647a.5.5 0 01.708 0z"
+                  clip-rule="evenodd" />
+                <path fill-rule="evenodd"
+                  d="M8 2.5A5.5 5.5 0 1013.5 8a.5.5 0 011 0 6.5 6.5 0 11-3.25-5.63.5.5 0 11-.5.865A5.472 5.472 0 008 2.5z"
+                  clip-rule="evenodd" />
+              </svg></button>
+            <button type="button" class="btn btn-outline-danger contact-button" (click)="deleteContact(i)"><svg
+                class="bi bi-x-circle" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8 15A7 7 0 108 1a7 7 0 000 14zm0 1A8 8 0 108 0a8 8 0 000 16z"
+                  clip-rule="evenodd" />
+                <path fill-rule="evenodd"
+                  d="M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z" clip-rule="evenodd" />
+                <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z"
+                  clip-rule="evenodd" />
+              </svg></button>
           </div>
         </td>
 
@@ -78,22 +105,48 @@
 
   <nav class="navbar navbar-light button-container">
     <div></div>
-    <ul class="nav justify-content-center double-boarder" style="background-color: rgb(201, 255, 255)">
+    <ul class="nav justify-content-center">
       <li class="nav-item">
-        <button type="button" class="btn btn-outline-dark contact-button" (click)="loadContacts()">Load
-          Contact</button>
+        <button type="button" class="btn btn-outline-dark contact-button" (click)="loadContacts()"><svg
+            class="bi bi-inbox-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M3.81 4.063A1.5 1.5 0 014.98 3.5h6.04a1.5 1.5 0 011.17.563l3.7 4.625a.5.5 0 01-.78.624l-3.7-4.624a.5.5 0 00-.39-.188H4.98a.5.5 0 00-.39.188L.89 9.312a.5.5 0 11-.78-.624l3.7-4.625z"
+              clip-rule="evenodd" />
+            <path fill-rule="evenodd"
+              d="M.125 8.67A.5.5 0 01.5 8.5h5A.5.5 0 016 9c0 .828.625 2 2 2s2-1.172 2-2a.5.5 0 01.5-.5h5a.5.5 0 01.496.562l-.39 3.124a1.5 1.5 0 01-1.489 1.314H1.883a1.5 1.5 0 01-1.489-1.314l-.39-3.124a.5.5 0 01.121-.393z"
+              clip-rule="evenodd" />
+          </svg></button>
       </li>
       <li class="nav-item">
-        <button type="button" class="btn btn-outline-dark contact-button"
-          (click)="saveItemsToLocalStorage(contacts)">Save
-          All</button>
+        <button type="button" class="btn btn-outline-info contact-button"
+          (click)="saveItemsToLocalStorage(contacts)"><svg class="bi bi-check-box" width="1em" height="1em"
+            viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M15.354 2.646a.5.5 0 010 .708l-7 7a.5.5 0 01-.708 0l-3-3a.5.5 0 11.708-.708L8 9.293l6.646-6.647a.5.5 0 01.708 0z"
+              clip-rule="evenodd" />
+            <path fill-rule="evenodd"
+              d="M1.5 13A1.5 1.5 0 003 14.5h10a1.5 1.5 0 001.5-1.5V8a.5.5 0 00-1 0v5a.5.5 0 01-.5.5H3a.5.5 0 01-.5-.5V3a.5.5 0 01.5-.5h8a.5.5 0 000-1H3A1.5 1.5 0 001.5 3v10z"
+              clip-rule="evenodd" />
+          </svg></button>
 
       </li>
       <li class="nav-item">
-        <button type="button" class="btn btn-outline-dark contact-button" (click)="addContact()">Add Contact</button>
+        <button type="button" class="btn btn-outline-success contact-button" (click)="addContact()"><svg
+            class="bi bi-plus-circle" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M8 3.5a.5.5 0 01.5.5v4a.5.5 0 01-.5.5H4a.5.5 0 010-1h3.5V4a.5.5 0 01.5-.5z"
+              clip-rule="evenodd" />
+            <path fill-rule="evenodd" d="M7.5 8a.5.5 0 01.5-.5h4a.5.5 0 010 1H8.5V12a.5.5 0 01-1 0V8z"
+              clip-rule="evenodd" />
+            <path fill-rule="evenodd" d="M8 15A7 7 0 108 1a7 7 0 000 14zm0 1A8 8 0 108 0a8 8 0 000 16z"
+              clip-rule="evenodd" />
+          </svg></button>
 
       </li>
     </ul>
   </nav>
-  <div></div>
+  <div>
+    <button type="button" class="btn btn-outline-dark contact-button" (click)="showToast()">Generate Password</button>
+  </div>
 </div>

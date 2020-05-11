@@ -18,11 +18,11 @@ html, body {
     border-radius: 91px 73px 73px 73px;
     -moz-border-radius: 91px 73px 73px 73px;
     -webkit-border-radius: 91px 73px 73px 73px;
-    border: 15px solid #000000;
+    border: 2px solid #000000;
 }
 .double-boarder {
     border-radius: 73px 73px 73px 73px;
  -moz-border-radius: 73px 73px 73px 73px;
  -webkit-border-radius: 73px 73px 73px 73px;
- border: 15px double #000000;
+ border: 4px double #000000;
 }

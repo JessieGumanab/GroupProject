@@ -6,6 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 import { IUser } from '../login/login.component';
 import { Router } from '@angular/router';
 import { ToastService } from '../toast/toast.service';
+import { ngfactoryFilePath } from '@angular/compiler/src/aot/util';
 
 @Component({
   selector: 'app-contact',
@@ -16,6 +17,9 @@ export class ContactComponent implements OnInit {
 
   contacts: Array<Contact> = [];
   contactParams = '';
+  toastTypes: Array<string> = [];
+  ranAlpha: Array<string> = [];
+  ranSym: Array<string> = [];
   localStorageService: LocalStorageService<Contact>;
   currentUser: IUser;
   constructor(
@@ -25,6 +29,30 @@ export class ContactComponent implements OnInit {
     private toastService: ToastService
   ) {
     this.localStorageService = new LocalStorageService('contacts');
+    this.toastTypes = ['success', 'info', 'warning', 'danger'];
+    this.ranAlpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'p', 'q',
+      'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    this.ranSym = ['!', '#', '$', '%', '&'];
+  }
+
+  // success, info, warning, danger
+  showToast() {
+
+    const rand = Math.floor(Math.random() * 4);
+    const randA = Math.floor(Math.random() * 25);
+    const randB = Math.floor(Math.random() * 25);
+    const randC = Math.floor(Math.random() * 25);
+    const randS = Math.floor(Math.random() * 5);
+    const ranN = Math.floor(Math.random() * 9);
+    const randD = Math.floor(Math.random() * 25);
+    const ranM = Math.floor(Math.random() * 9);
+    const randE = Math.floor(Math.random() * 25);
+    const ranO = Math.floor(Math.random() * 9);
+    const toastType = this.toastTypes[rand];
+    const toastMessage = 'Generated Password is: ' + this.ranAlpha[randA] + this.ranAlpha[randB] +
+      this.ranAlpha[randC] + ranN + this.ranAlpha[randD] + ranM + this.ranAlpha[randE] + ranO + this.ranSym[randS];
+    const duration = 30000;
+    this.toastService.showToast(toastType, duration, toastMessage);
   }
 
   async ngOnInit() {

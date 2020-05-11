@@ -25,3 +25,9 @@
     grid-template-columns: 1fr 1fr 1fr;
     
 }
+.toast-container {
+    width: 500px;
+    position: fixed;
+    right: 20px; 
+    top: 20px;
+}
